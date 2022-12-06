@@ -1,4 +1,5 @@
 from PIL import Image
+from PIL import ImageEnhance
 print("pick a photo (Shrek, Ronaldo):")
 
 x = input()
@@ -7,8 +8,28 @@ if x == "Shrek":
     print(Image.format, Image.size, Image.mode)
     Image.show()
 
-y = input()
-if y == "Ronaldo":
-    Image2 = Image.open("Ronaldo.jpeg")
-    print(Image2.format, Image2.size, Image2.mode)
-    Image2.show()
+if x == "Ronaldo":
+    Image = Image.open("Ronaldo.jpg")
+    print(Image.format, Image.size, Image.mode)
+    Image.show()
+
+print("pick a filter (Cursed, Enhance, Squeeze)")
+
+if x == "Shrek":
+    y = input()
+    if y == "Cursed":
+        enh = ImageEnhance.Contrast(Image)
+        enh.enhance(4.5).show("50% more contrast")
+
+if x == "Ronaldo":
+    y = input()
+    if y == "Cursed":
+        enh = ImageEnhance.Contrast(Image)
+        enh.enhance(4.5).show("50% more contrast")
+
+if x == "Shrek":
+    y = input()
+    if y == "Enhance":
+        enhancer = ImageEnhance.Sharpness(Image)
+        enhancer
+
